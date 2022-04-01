@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Organizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--
+Pure JS Draggable List Organizer
+  -Mini 3-Day Auto-Update Calendar
+  -Clock
+  -Random,fake weather stats
+!-->
+<article>
+  <header>
+    <ul>
+      <li>
+        <span class = 'day' id = 'd1'></span>
+        <span class = 'date' id = 'dt1'></span>
+        <span class = 'mon' id = 'm1'></span>
+      </li>
+      <li>
+        <span class = 'day' id = 'd2'></span>
+        <span class = 'date' id = 'dt2'></span>
+        <span class = 'mon' id = 'm2'></span>
+      </li>
+      <li id = 'cur'>
+        <span class = 'day' id = 'd3'></span>
+        <span class='date' id = 'dt3'></span>
+        <span class = 'mon' id = 'm3'></span>
+      </li>
+    </ul>
+    <div id = 'stuff'>
+      <span>
+        <span id ='dn'></span>
+        <span id='wea'></span>&nbsp;
+        <span id='tem'></span>℉
+      </span>
+      <span>
+        <span id = 'time'></span>
+        <span id = 'ampm'></span>
+      </span>
+      <span id='sym'>&nbsp;&nbsp;🔔&nbsp;&nbsp;📝&nbsp;&nbsp;<span id = 'env'>📩</span></span>
+    </div>
+  </header>
+    <div id="wrap">
+        <div class="list" id = 'reg'>
+            <div>Mail Package</div>
+            <span>Before 4pm</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'reg'>
+            <div>Meeting w/You Know Who</div>
+            <span>Confirmed 1pm</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'imp'>
+            <div>Call Mom - Birthday!</div>
+            <span class='rem'>Important Reminder!</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id='reg'>
+            <div>Buy Milk, Bread & Cereal</div>
+            <span>Anytime Today</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'reg'>
+            <div>Make Bank Deposit</div>
+            <span>Before 4pm</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'imp'>
+            <div>Wash Football Uniform</div>
+            <span class = 'rem'>Important Reminder!</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'reg'>
+            <div>Send Report To John</div>
+            <span>Before 12pm</span>
+            <div class="draggable"></div>
+        </div>
+        <div class="list" id = 'imp'>
+            <div>Submit Vacation Time</div>
+            <span class = 'rem'>Important Reminder!</span>
+            <div class="draggable"></div>
+        </div>
+    </div>
+</article>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

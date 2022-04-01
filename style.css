@@ -1,0 +1,223 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  width: 100%;
+  min-height: 100%;
+  background: #0a0b0f;
+  font-family: "Helvetica";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+article {
+  min-height: 100%;
+  width: 430px;
+  align-self: center;
+  border-bottom: 8px solid #14141a;
+  font-family: "Quicksand", sans-serif;
+  filter: drop-shadow(5px 2px 5px rgba(4, 4, 6, 0.3));
+}
+
+#wrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #B48F17;
+  text-shadow: 0 1px 5px #1a1b23, 0 -2px 0 rgba(16, 17, 24, 0.2), 0 -3px 0 rgba(16, 17, 24, 0.5), 0 2px 0 rgba(16, 17, 24, 0.4), 0 2px 1px rgba(16, 17, 24, 0.6);
+}
+
+#wrap[sorting=true] .list[dragging=false] {
+  transition: all 0.2s ease-in-out;
+}
+
+.list {
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  padding: 1rem 0 0 1.5rem;
+  border-left: 1.5rem solid #14141a;
+  border-bottom: 1px solid #14141a;
+  background: #1a1b23;
+  transition: all 200ms ease;
+}
+.list:hover {
+  border-left: 1.5rem solid #b59017;
+}
+
+.list > div:first-child {
+  height: 18px;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 17px;
+  color: #BDBDBE;
+}
+
+.list#reg > div:first-child:before {
+  content: "›";
+  padding-right: 1.285rem;
+  color: #BDBDBE;
+  font-size: 1.25rem;
+  transform: rotate(90deg);
+}
+
+.list#imp > div:first-child:before {
+  content: "✯";
+  padding-right: 1rem;
+  color: #b59017;
+  font-size: 1rem;
+}
+
+.list > span {
+  font-size: 11px;
+  color: #A0A2A7;
+  margin-left: 4px;
+}
+
+span.rem {
+  color: #b59017;
+  font-weight: bold;
+}
+
+header {
+  height: 10.5rem;
+}
+
+#stuff {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  color: #626684;
+  font-size: 1.2rem;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #0f1015;
+}
+#stuff span {
+  align-self: center;
+  width: calc(100%/3);
+}
+#stuff span#time {
+  font-size: 1.5rem;
+}
+#stuff span#sym, #stuff span#tem {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+#stuff span#sym #env, #stuff span#tem #env {
+  font-size: 1.3rem;
+}
+#stuff span#wea {
+  font-size: 1.3rem;
+}
+#stuff span#dn {
+  font-size: 1rem;
+  padding-top: 0;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  width: calc(100%/3);
+  height: 7rem;
+  align-self: center;
+  display: inline-block;
+  color: #4c4f67;
+  padding: 1rem;
+  font-weight: bold;
+  background: #14141a;
+  text-shadow: 0 1px 5px #14141a, 0 -1px 0 rgba(20, 20, 26, 0.2), 0 -2px 0 rgba(20, 20, 26, 0.4), 0 1px 0 rgba(20, 20, 26, 0.8), 0 1px 1px #14141a;
+}
+ul span {
+  display: block;
+  text-align: center;
+}
+
+li#cur {
+  background: #b59017;
+  color: #0b0b0f;
+  text-shadow: 0 1px 5px #b59017, 0 -1px 0 #14141a, 0 -2px 0 rgba(135, 108, 18, 0.4), 0 1px 0 #14141a, 0 1px 1px #b59017;
+  box-shadow: inset 3px 3px 4px rgba(10, 11, 15, 0.25);
+}
+
+span.date {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.list[dragging=true] {
+  position: absolute;
+  top: 0;
+  transition: all 0s linear;
+  opacity: 0.8;
+  box-shadow: 0px 0px 4px #0a0b0f;
+}
+
+.list[dragging=true][fin=true] {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 1px 0px #0a0b0f, 0px -1px 0px #0a0b0f;
+}
+
+.list[drag_after=true] {
+  transform: translate3d(0, 52px, 0);
+}
+
+.pholder {
+  display: none;
+}
+
+#wrap[sorting=true] .pholder {
+  display: block;
+}
+
+.draggable {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #b59017;
+  top: 1.5rem;
+  right: 1.8rem;
+  cursor: move;
+  box-shadow: inset 1px 1px 2px 1px rgba(17, 18, 23, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+.draggable:after, .draggable:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 4px;
+  left: -3.5px;
+  background-color: inherit;
+  display: block;
+  box-shadow: inset 1px 1px 2px 1px rgba(17, 18, 23, 0.5);
+}
+
+.draggable:after {
+  top: 16px;
+}
+
+.draggable:before {
+  bottom: 16px;
+}
